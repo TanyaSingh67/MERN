@@ -21,3 +21,8 @@ console.log(prompt("hey"));
 //npm comes preinstalled with node js
 //we can check the version of npm using npm -v command
 //we can check the version of node using node -v command
+
+
+//we can import and export modules in node js using require and module.exports
+//we can create our own modules and use them in other files
+//we can also use third party modules using npm
