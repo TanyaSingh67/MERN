@@ -23,7 +23,7 @@ myserver.listen(3000,()=>{
 
 //now we will also use the concept of file handling in this server
 const filehandling = http.createServer((req, res) => {
-    const log = `request made at ${new Date()}\n`; //this log will be added to the file and will keep the track of requests made to the server
+    const log = `request made at ${new Date()},${req.url}\n`; //this log will be added to the file and will keep the track of requests made to the server
     file.appendFile("lod.txt", log, (err, data) => {  //make sure to keep this non blocking code so that other requests are not blocked
         //always use async methods
         //avoid using code for imageprocessing,etc to avoid blockage of other requests
@@ -71,3 +71,8 @@ const multipageserver = http.createServer((req, res) => {
 multipageserver.listen(8000, () => {
     console.log("server is listening on port 8000");
 });
+
+//workin with URLs
+//to instal url package 
+//typr npm install url and then press enter
+//
