@@ -1,0 +1,30 @@
+//version
+^4.18.2
+ a version ahs 3 parts
+ 1st part ->2
+ 2nd part->18
+ 3rd part->4
+
+ // 1st part i.e 2 shows minor fixes whetger u will uodate or not it ill not much affect
+4.18.2 and 4.18.3 are almost same habving only the difference of som minor fixes
+
+//part 2 i.e 18-- recommended bug fix --whenver there's an update in the 2nd part we surely need to update it
+
+//part 3 i.e 4-- major updte/ breaking update--- if there's an updat in the 3rd part you should nt update that version if you are working on the prebious project but if u are creating something new from scratch you can update it
+
+^-carrate sign --shows the compatibilty with the 3rd part
+/using ^ symbol automatically updates all the part exceptthe 3rd part//it will automatocally update all the recommended version compatible with 3rd part
+ if wewon't use this symbol we will have to manually update the versions
+ ^4.18.2 means if we will update 2nd and 2st part can be updated but 3rd art will always be there 4th version
+
+ //in code if wanna update or wnt the version according to ourseleves we will use @ symbol and them after write the version we want to install
+ eg: npm install express@4.17.2
+
+
+~ aproximate symbol changes only last but means 1st part
+~4.18.2
+4.18.3
+4.18.4
+.
+.
+.
