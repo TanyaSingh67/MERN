@@ -24,4 +24,7 @@
 //now the request so made should be in hybrid mode containg both jsin and html responses
 //so that if teh request is made on browser , html response makes it fater
 
+//creating a rest api using node and express
+
+
 
