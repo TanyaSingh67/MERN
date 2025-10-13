@@ -8,7 +8,10 @@ const myserver=http.createServer((req,res)=>{
 switch(myUrl.pathname){ //here we will be dealin with the entire path of the url including query parameters and not just domain and protocol
     case "/":
         // handle root path
-        res.end("Welcome to the homepage!"); //res.end thing will be printed on the main server.
+        if(req.method==="GET"){
+res.end("Welcome to the homepage!");
+        }
+         //res.end thing will be printed on the main server.
         break;
  case "/about":
     res.end(`${username}`)  
@@ -22,3 +25,15 @@ switch(myUrl.pathname){ //here we will be dealin with the entire path of the url
 myserver.listen(3000, (err,data)=>{
     console.log("here we started our server") //this thing will be printd on the terminal of the vs code
 })
+
+
+//HTTP methods
+//there are 5 types of methods in http
+//get--any request we make on the server is a get request . get request is searched in the database of the server
+//post--anything we post like signup/signin these are the things in whuch add something to our database
+//put--uploading any file, putting any picture etc...where we put something on our webade 
+//patch--upadting,editing comes under patch
+//delete
+
+//to perform thse methods manually in nodejs is a task of making code lengthy
+//so we use a framework for this called aas express
