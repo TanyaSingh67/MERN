@@ -31,6 +31,18 @@ const app= express();
 const PORT=8000;
 //this is a middleware a kind of plugin used to handle all types of requests
 app.use(express.urlencoded({extended:false}))
+//app.use(express.json({extended:false})); -->.if the new post request would be in json format we need to use this middleware
+
+ app.use("api/users/:id",(req,res,next)=>{
+    console.log("this is the middle ware that will be called after decoding the post request");
+    next();
+ })
+
+ app.use((req,res,next)=>{
+    return req.end(`this is the next middlewarecalled by the previous middle ware and this middle as has no forward middle wate it willconnect to the request funcyion if not terminated`);
+    next(); //tgis next() method call the next middle ware
+    //but here in this case since we have used req.end() so after this all the request will terminate
+ })
 
 
 app.get("/users",(res,req)=>{
@@ -51,7 +63,14 @@ const user=users.find((user)=> user.id===id)
 return res.json(users);
 }).post(()=>{
    const body=req.body;
+   if(!users){
+    req.status(404).end(`this data isnot avaiable`);
+   }
+   if(!body || !body.email || !body.first_name|| !body.last_name || !body.ip_address || !body.gender){
+    req.status(400).end(`this data isnot avaiable`);
+   }
    console.log(body);
+   req.status(201).end(`data has been succesfully created`)
 
 }).patch(()=>{
  console.log( `status pending`)
