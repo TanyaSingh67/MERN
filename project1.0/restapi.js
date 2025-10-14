@@ -25,6 +25,44 @@
 //so that if teh request is made on browser , html response makes it fater
 
 //creating a rest api using node and express
+const users=require("./MOCK_DATA.json");
+const express=require("express");
+const app= express();
+const PORT=8000;
+//this is a middleware a kind of plugin used to handle all types of requests
+app.use(express.urlencoded({extended:false}))
 
 
+app.get("/users",(res,req)=>{
+    const html=`
+    <html>
+    <ul>
+   ${usersmap((user)=> <li>${users.first_name}</li>
+    )}
+    </ul>`;
+    req.send(html);
+})
+//REST API me hmlog http methods to program krenge
+app.route("api/users/:id")  //this :id notation denotes the dynamic 
+.get((req,res)=> {
+    //we need to define id
+    const id=Number(req.params.id);
+const user=users.find((user)=> user.id===id)
+return res.json(users);
+}).post(()=>{
+   const body=req.body;
+   console.log(body);
 
+}).patch(()=>{
+ console.log( `status pending`)
+})
+.delete(()=>{
+   console.log( `status pending`) 
+}).put(()=>{
+    console.log( `status pending`)
+});
+app.listen(PORT, ()=>{`server started`})
+
+// in case of post,patch,put,delete we cannot do it from browser
+//for this we will use postman
+//basically postman is a utility software

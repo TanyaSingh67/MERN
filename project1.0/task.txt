@@ -1,0 +1,27 @@
+in therest aproximatewwe have 4 methods 
+get ,post, patcgh, delete
+
+we have two types of requests
+//hybrid mode
+
+
+users--returning html doc
+res.send();
+
+api/users-- returning json file
+retuen res.json()
+
+GET /users-list all users in html
+GET /api/users- list all users in json
+
+GET /api/users/1- get the user with id 1
+GET /api/users/2-get the user wuth id 2
+//these are dynamic path
+
+POST /api/users- craeate a new user
+PATCH /api/users/1- edit thebuser with id 1
+DELETE /api/users/1- delete the user wuth id 1
+
+
+we need a database as if now we don't have any database so we will create a dummy database
+for this we have a tool on website named "mockaroo"
