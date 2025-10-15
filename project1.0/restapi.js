@@ -27,6 +27,7 @@
 //creating a rest api using node and express
 const users=require("./MOCK_DATA.json");
 const express=require("express");
+const mongo=require("mongoose");
 const app= express();
 const PORT=8000;
 //this is a middleware a kind of plugin used to handle all types of requests
